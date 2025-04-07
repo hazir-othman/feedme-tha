@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container my-5">
+      <div class="row">
+          <div class="col-md-6">
+            <h3>Pending Orders</h3>
+            <div class="row g-2 pending">
+              <div class="col-4">
+                <div class="card p-2">Order #123</div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">Order #124</div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">Order #125</div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">Order #126</div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">Order #127</div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">Order #128</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <h3>Completed Orders</h3>
+            <div class="row g-2 completed">
+              <div class="col-4">
+                <div class="card p-2">Order #100</div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">Order #101</div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">Order #102</div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">Order #103</div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">Order #104</div>
+              </div>
+              <div class="col-4">
+                <div class="card p-2">Order #105</div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="row mt-4">
+          <div class="col text-center">
+              <button class="btn btn-primary">Add New Order</button>
+              <button class="btn btn-success">Add VIP Order</button>
+              <button class="btn btn-info">Add Cooking Bot</button>
+              <button class="btn btn-danger">Remove Cooking Bot</button>
+          </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <script>
+      /*
+       TODO: all the functions
+
+       find a way to add to the pending orders by priority
+
+       create a order number generator: typically 4-5 in length starts with 0001, inc by one each time
+
+       use two linked list to track the VIP and normal orders
+        if VIP order, need to insert to top of orders
+
+       add bot function that will handle all pending VIP orders first and move that order to completed after 10s
+
+       remove bot function that will return the processing order back to pending
+      */
+
+    </script>
+  </body>
+</html>

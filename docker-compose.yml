@@ -1,0 +1,15 @@
+services:
+  nodeinit:
+    container_name: feedme-tha
+    image: feedme-tha:latest
+    build:
+      context: ./
+      dockerfile: ./Dockerfiles/FeedMeTHA
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+    volumes:
+      - ./routes:/usr/src/app/routes
+      - ./views:/usr/src/app/views
+
