@@ -2,9 +2,9 @@ const express = require('express');
 
 const router = express.Router();
 
-const test = async (req, res) => {
+const main = async (req, res) => {
   res.render('main');
 }
 
-router.get('/', test);
+router.get('/main', main);
 module.exports = router;

@@ -12,4 +12,5 @@ services:
     volumes:
       - ./routes:/usr/src/app/routes
       - ./views:/usr/src/app/views
+      - ./public/scripts:/usr/src/app/public/scripts
 
