@@ -6,6 +6,19 @@ const idleBot = new Set();
 const processingOrder = new Map();
 let orderNumber = 1;
 
+window.onload = function () {
+  if (window.APP_CONFIG?.showProcessing) {
+    document.getElementById('processing-tab').removeAttribute('hidden');
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+      if (tab.classList.contains('col-md-6')) {
+        tab.classList.remove('col-md-6');
+        tab.classList.add('col-md-4');
+      }
+    });
+  }
+};
+
 function generateOrderNumber() {
   return String(orderNumber++).padStart(4, '0');
 }
@@ -53,6 +66,12 @@ function returnOrder(order) {
     priorityQueue.return(order);
   } else {
     normalQueue.return(order);
+  }
+
+  if (window.APP_CONFIG?.show_processing) {
+    const pendingDiv = document.getElementById('pending');
+    const orderDiv = document.getElementById(order.id);
+    pendingDiv.appendChild(orderDiv);
   }
 }
 
@@ -110,6 +129,13 @@ function botProcessOrder(botId, order) {
   // remove from idle bot, add to busy bot set timeout for 10 seconds, save that value
   idleBot.delete(botId);
   busyBot.add(botId);
+
+  if (window.APP_CONFIG?.show_processing) {
+    const processingDiv = document.getElementById('processing');
+    const orderDiv = document.getElementById(order.id);
+    processingDiv.appendChild(orderDiv);
+  }
+
   const timeoutId = setTimeout(() => {
     completeOrder(botId, order.id);
   }, 10000);
